@@ -1,19 +1,17 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import Home from './pages/Home/index.tsx'
-import Erro from './pages/Erro/index.tsx'
-import Header from './components/Header/index.tsx'
-import ReceipView from './ReceipView/index.js';
+import Home from './pages/home/index.tsx';
+import Add from './pages/adicionar/index.tsx';
+import Detalhes from './pages/detalhes/index.tsx';
 
 
 function RoutesApp() {
     return (
         <BrowserRouter>
-            <Header />
             <Routes>
                 <Route path={"/"} element={<Home />} />
-                <Route path="/receita" element={<ReceipView />} />
-                <Route path="*" element={<Erro />} />
+                <Route path={"/adicionar"} element={<Add />} />
+                <Route path={"/detalhes"} element={<Detalhes />} />
             </Routes>
         </BrowserRouter>
     );

@@ -1,8 +1,11 @@
+import React from 'react';
+
+
 function App() {
   return (
-    <div className="App">
-        
-    </div>
+    <html className="h-screen w-screen">
+        <p className="bg-blue-500 flex flex-row">TIAGO</p>
+    </html>
   );
 }
 
