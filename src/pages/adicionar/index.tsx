@@ -4,11 +4,11 @@ import '../../globals.css'
 
 
 
-const adicionar = () => {
+const Adicionar = () => {
     return (
         <>
             <div className="flex flex-row h-96 w-screen bg-blue-500">
-                <nav className='flex flex-col '>
+                <nav className='flex flex-row '>
                     <ul>
                         <li className="">
                             <Link to="/" className="p-6">Home</Link>
@@ -22,4 +22,4 @@ const adicionar = () => {
     );
 }
 
-export default adicionar;
+export default Adicionar;
