@@ -1,11 +1,11 @@
+import Receip from './pages/Receip';
 
-const App = () => {
+function App() {
     return (
         <>
-
+            <Receip />
         </>
-
-    )
+    );
 }
 
 export default App;
