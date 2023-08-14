@@ -15,6 +15,9 @@ function ReceipCardView(props) {
             <div className="flex flex-row pl-10 w-2/12 items-center justify-start gap-3 font-semibold text-lg">
                 {props.nome}
             </div>
+            <div className="flex flex-col">
+
+            </div>
         </Link>
     );
 }

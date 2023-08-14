@@ -4,6 +4,7 @@ import dados from '../../dados.json'
 import ReceipCardView from "../../components/ReceipCard";
 
 const Receip = () => {
+
     return (
         <>
             <div className="flex flex-col w-full bg-blue-200 items-center justify-center">
