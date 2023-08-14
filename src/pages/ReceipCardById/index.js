@@ -12,20 +12,38 @@ function ReceipCardById() {
                 <div className="flex flex-col w-10/12 h-auto bg-blue-200">
                     <div className="flex flex-col items-center justify-center font-semibold text-lg gap-20">
                         {
-                            dados.map((item) => {
+                            dados.receitas.map((item) => {
                                 if (params.id === item.id) {
                                     return (
-                                        <div className="flex w-full h-full items-center justify-center">
-                                            <div className="flex items-center w-3/12 h-full justify-start">
-                                                <div className="flex flex-row h-full w-1/12 items-start justify-start text-2xl">
+                                        <div className="flex w-full h-full flex-col gap-6 items-center justify-center">
+                                            <div className="flex items-center w-3/12 h-full justify-center">
+                                                <div className="flex flex-row h-full items-start justify-start text-2xl">
                                                     {item.id}
                                                 </div>
-                                                <div>
-                                                    <img className="rounded-2xl" src={item.imagem} width={300} height={300} alt="Imagem da comida" />
+                                                <div className="flex flex-row pl-10 items-center justify-start gap-3 font-semibold text-2xl">
+                                                    {item.nome}
                                                 </div>
                                             </div>
-                                            <div className="flex flex-row pl-10 w-2/12 items-center justify-start gap-3 font-semibold text-lg">
-                                                {item.nome}
+
+                                            <div>
+                                                <img className="rounded-2xl" src={item.imagem} width={300} height={300} alt="Imagem da comida" />
+                                            </div>
+                                            <div className='flex flex-col '>
+                                                <ul>
+                                                    {item.ingredientes.map((item1) => (
+                                                        <li className='flex pb-4' >{item1}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+
+                                            <div>
+                                                <ul>
+                                                    {item.modopreparo.map((item1) => (
+                                                        <li>
+                                                            {item1}
+                                                        </li>
+                                                    ))}
+                                                </ul>
                                             </div>
                                         </div>
                                     )
