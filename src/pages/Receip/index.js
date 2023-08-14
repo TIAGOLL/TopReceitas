@@ -10,7 +10,7 @@ const Receip = () => {
             <div className="flex flex-col w-full bg-blue-200 items-center justify-center">
                 <div className="flex-col w-8/12 pt-20 gap-20 pb-20 flex">
                     {
-                        dados.map((item) => (<ReceipCardView id={item.id} imagem={item.imagem} nome={item.nome} />))
+                        dados.receitas.map((item) => (<ReceipCardView id={item.id} imagem={item.imagem} nome={item.nome} />))
                     }
                 </div>
             </div>

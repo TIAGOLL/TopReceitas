@@ -1,24 +1,33 @@
 import React from 'react';
-//import dados from './dados.json'
+import dados from '../../dados.json'
+
 
 const Adicionar = () => {
-    let obj = {nome: "",ingredientes: [""],modopreparo: [""]}
+    let obj = { 'nome': "", 'ingredientes': [""], 'modopreparo': [""] }
 
-    async function add(){
+    const add = async e =>{
         obj.nome = document.getElementById("nome").value;
         obj.ingredientes = document.getElementById("ingredientes").value;
         obj.modopreparo = document.getElementById("modopreparo").value;
-        //dados.services.append(obj);
-        
+        const receita = {
+            id: "1",
+            nome: obj.nome,
+            ingredientes: [obj.ingredientes],
+            modopreparo: [obj.modopreparo],
+            imagem: ""
+        }
+        dados = dados.receitas.concat(receita);
+        dados = JSON.stringify(dados);
+
     }
     return (
         <>
-            <div>
+            <form onSubmit={add}>
                 <input type='text' id='nome' placeholder='nome' defaultValue={""}></input>
                 <input type='text' id='ingredientes' placeholder='ingredientes' defaultValue={""}></input>
                 <input type='text' id='modopreparo' placeholder='modopreparo' defaultValue={""}></input>
-                <button onClick={add}>Adicionar</button>
-            </div>
+                <button type='submit'>Adicionar</button>
+            </form>
         </>
     );
 }
