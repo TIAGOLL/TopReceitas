@@ -14,7 +14,6 @@ const Header = () => {
                         <li className="gap-6 flex flex-row">
                             <NavLink className={({ isActive }) => (isActive ? 'underline decoration-1' : 'inactive')} to={"/"}>Home</NavLink>
                             <NavLink className={({ isActive }) => (isActive ? 'underline decoration-1' : 'inactive')} to={"/adicionar"}>Adicionar</NavLink>
-                            <NavLink className={({ isActive }) => (isActive ? 'underline decoration-1' : 'inactive')} to={"/detalhes"}>Detalhes</NavLink>
                         </li>
                     </ul>
                 </nav>
