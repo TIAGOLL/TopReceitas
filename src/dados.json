@@ -1,4 +1,5 @@
-[
+{
+"receitas":[
     {
         "id": "1",
         "nome": "Bolo de cenoura",
@@ -125,3 +126,4 @@
         "imagem": "https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/fe2f8f03d1ca84d923d37c837ff36274.webp?itok=ZNK-ftgD"
     }
 ]
+}
