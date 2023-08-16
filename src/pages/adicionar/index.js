@@ -24,7 +24,7 @@ const Adicionar = () => {
 
     useEffect(() => {
         carregaDados()
-    }, []);
+    }, [atualizaDados]);
 
 
     const addReceip = async e => {
@@ -36,7 +36,7 @@ const Adicionar = () => {
         const id = data.length + 1
 
         const receita = {
-            "id": id,
+            "id": `${id}`,
             "nome": nome,
             "ingredientes": ingredienteSeparado,
             "modopreparo": modoPreparoSeparado,
@@ -45,6 +45,11 @@ const Adicionar = () => {
 
         await axios.post(url, receita)
         setAtualizaDados(prev => !prev)
+        setNome('')
+        setImagem('')
+        setIngredientes('')
+        setNewsLetter(false)
+        setModoPreparo('')
     }
 
     return (
@@ -58,7 +63,7 @@ const Adicionar = () => {
                             </label>
                         </div>
                         <div className="w-2/3">
-                            <input onChange={e => setNome(e.target.value)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder='Arroz' />
+                            <input value={nome} onChange={e => setNome(e.target.value)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="inline-full-name" type="text" placeholder='Arroz' />
                         </div>
                     </div>
                     <div className="flex items-center mb-6">
@@ -68,7 +73,7 @@ const Adicionar = () => {
                             </label>
                         </div>
                         <div className="w-2/3">
-                            <input onChange={e => setIngredientes(e.target.value)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="ingredientes" type="text" placeholder="1 - cebola, 2 - arroz, 3 - óleo..." />
+                            <input value={ingredientes} onChange={e => setIngredientes(e.target.value)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="ingredientes" type="text" placeholder="1 - cebola, 2 - arroz, 3 - óleo..." />
                         </div>
                     </div>
                     <div className="flex items-center mb-6">
@@ -78,7 +83,7 @@ const Adicionar = () => {
                             </label>
                         </div>
                         <div className="w-2/3">
-                            <input onChange={e => setModoPreparo(e.target.value)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="modopreparo" type="text" placeholder="Primeiro pegue a cebola, pique em pedacinhos..." />
+                            <input value={modoPreparo} onChange={e => setModoPreparo(e.target.value)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="modopreparo" type="text" placeholder="Primeiro pegue a cebola, pique em pedacinhos..." />
                         </div>
                     </div>
                     <div className="flex items-center mb-6">
@@ -88,7 +93,7 @@ const Adicionar = () => {
                             </label>
                         </div>
                         <div className="w-2/3">
-                            <input onChange={e => setImagem(e.target.value)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="imagem" type="text" placeholder="https://imagem.com" />
+                            <input value={imagem} onChange={e => setImagem(e.target.value)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="imagem" type="text" placeholder="https://imagem.com" />
                         </div>
                     </div>
 

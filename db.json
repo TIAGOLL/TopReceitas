@@ -131,7 +131,7 @@
       "imagem": "https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/fe2f8f03d1ca84d923d37c837ff36274.webp?itok=ZNK-ftgD"
     },
     {
-      "id": "MgDALqG",
+      "id": "7",
       "nome": "arroz",
       "ingredientes": [
         "Arroz",
@@ -145,44 +145,45 @@
       "imagem": "https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/7c44045d2e8577819cb76b2b404902dd.webp?itok=KzeGh6J4vtQgNrwXTaW6oR5z+sjlmmXzOPqA9zSS2dvDG/Q/90zXZeXf98VYH/9k="
     },
     {
-      "id": "OqsUlxv",
-      "nome": "a",
+      "id": "8",
+      "nome": "Batata Recheada",
       "ingredientes": [
-        "tiago",
-        " kafdos",
-        " isudhfiush",
-        " sjd"
+        "Batata",
+        "queijo",
+        "bacon"
       ],
       "modopreparo": [
-        "a"
+        "Descasque a batata",
+        "rale o queijo",
+        "pique o bacon...."
+      ],
+      "imagem": ""
+    },
+    {
+      "id": "9",
+      "nome": "Batata Recheada",
+      "ingredientes": [
+        "Arroz",
+        " Oleo",
+        " Cebola"
+      ],
+      "modopreparo": [
+        "1 - corte a cebola",
+        " 2 - frite a cebola cortada com o óleo em uma panela..."
       ],
       "imagem": "https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/7c44045d2e8577819cb76b2b404902dd.webp?itok=KzeGh6J4vtQgNrwXTaW6oR5z+sjlmmXzOPqA9zSS2dvDG/Q/90zXZeXf98VYH/9k="
     },
     {
-      "id": "FsJkqDK",
-      "nome": "a",
+      "id": "10",
+      "nome": "Batata Recheada",
       "ingredientes": [
-        "tiago",
-        " kafdos",
-        " isudhfiush",
-        " sjd"
+        "Arroz",
+        " Oleo",
+        " Cebola"
       ],
       "modopreparo": [
-        "a"
-      ],
-      "imagem": "https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/7c44045d2e8577819cb76b2b404902dd.webp?itok=KzeGh6J4vtQgNrwXTaW6oR5z+sjlmmXzOPqA9zSS2dvDG/Q/90zXZeXf98VYH/9k="
-    },
-    {
-      "id": 10,
-      "nome": "a",
-      "ingredientes": [
-        "tiago",
-        " kafdos",
-        " isudhfiush",
-        " sjd"
-      ],
-      "modopreparo": [
-        "a"
+        "1 - corte a cebola",
+        " 2 - frite a cebola cortada com o óleo em uma panela..."
       ],
       "imagem": "https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/7c44045d2e8577819cb76b2b404902dd.webp?itok=KzeGh6J4vtQgNrwXTaW6oR5z+sjlmmXzOPqA9zSS2dvDG/Q/90zXZeXf98VYH/9k="
     }

@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
 function ReceipCardById() {
 
@@ -27,7 +28,7 @@ function ReceipCardById() {
                 <div className="flex flex-col w-10/12 h-auto bg-blue-200">
                     <div className="flex flex-col items-center justify-center font-semibold text-lg gap-20">
                         {
-                            dados.receitas.map((item) => {
+                            data.map((item) => {
                                 if (params.id === item.id) {
                                     return (
                                         <div className="flex w-full h-full flex-col gap-6 items-center justify-center">
