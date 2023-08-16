@@ -1,15 +1,30 @@
 import React from 'react';
-import dados from '../../dados.json';
-import { useState } from 'react';
+import { useRef } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Adicionar = () => {
-
 
     const [nome, setNome] = useState('')
     const [ingredientes, setIngredientes] = useState('')
     const [modoPreparo, setModoPreparo] = useState('')
+    const [imagem, setImagem] = useState('')
     const [newsLetter, setNewsLetter] = useState(false)
+    const [data, setData] = useState([])
+    const [atualizaDados, setAtualizaDados] = useState(false);
 
+    const formRef = useRef()
+
+    const url = 'http://localhost:3000/receitas'
+
+    async function carregaDados() {
+        await axios.get(url)
+            .then((res) => setData(res.data))
+    }
+
+    useEffect(() => {
+        carregaDados()
+    }, []);
 
 
     const addReceip = async e => {
@@ -18,29 +33,24 @@ const Adicionar = () => {
         const ingredienteSeparado = ingredientes.split(',')
         const modoPreparoSeparado = modoPreparo.split(',')
 
-        let obj = { 'nome': nome, 'ingredientes': ingredienteSeparado, 'modopreparo': modoPreparoSeparado }
-        const id = dados.receitas.map((item) => {
+        const id = data.length + 1
 
-            const cont = item.lenght + 1 
-
-            return cont
-        })
-        console.log(id)
         const receita = {
-            id: "7",
-            nome: obj.nome,
-            ingredientes: obj.ingredientes,
-            modopreparo: obj.modopreparo,
-            imagem: ""
+            "id": id,
+            "nome": nome,
+            "ingredientes": ingredienteSeparado,
+            "modopreparo": modoPreparoSeparado,
+            "imagem": imagem
         }
 
-        console.log(receita)
-
+        await axios.post(url, receita)
+        setAtualizaDados(prev => !prev)
     }
+
     return (
         <>
             <div className='flex w-full items-center justify-center '>
-                <form onSubmit={addReceip} className="w-8/12 flex flex-col justify-center my-10">
+                <form ref={formRef} onSubmit={addReceip} className="w-8/12 flex flex-col justify-center my-10">
                     <div className="flex items-center mb-6">
                         <div className="w-2/12">
                             <label className="block text-gray-700 font-bold text-center mb-1 pr-4" for="inline-full-name">
@@ -69,6 +79,16 @@ const Adicionar = () => {
                         </div>
                         <div className="w-2/3">
                             <input onChange={e => setModoPreparo(e.target.value)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="modopreparo" type="text" placeholder="Primeiro pegue a cebola, pique em pedacinhos..." />
+                        </div>
+                    </div>
+                    <div className="flex items-center mb-6">
+                        <div className="w-2/12">
+                            <label className="block text-gray-700 font-bold text-center mb-1 pr-4" for="imagem">
+                                URL da imagem
+                            </label>
+                        </div>
+                        <div className="w-2/3">
+                            <input onChange={e => setImagem(e.target.value)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="imagem" type="text" placeholder="https://imagem.com" />
                         </div>
                     </div>
 

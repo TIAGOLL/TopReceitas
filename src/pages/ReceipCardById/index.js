@@ -1,10 +1,25 @@
-import dados from '../../dados.json'
 import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 function ReceipCardById() {
 
     const params = useParams()
+
+
+    const [data, setData] = useState([])
+    const url = 'http://localhost:3000/receitas'
+
+    async function carregaDados() {
+        await axios.get(url)
+            .then((res) => setData(res.data))
+    }
+
+    useEffect(() => {
+        carregaDados()
+    }, []);
+
 
     return (
         <div className="flex bg-blue-200">
