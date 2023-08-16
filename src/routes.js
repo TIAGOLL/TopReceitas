@@ -9,16 +9,18 @@ import Receip from './pages/Receip';
 
 function RoutesApp() {
     return (
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-            <Header />
-            <Routes>
-                <Route path={"/"} element={<App />} />
-                <Route path={"/adicionar"} element={<Adicionar />} />
-                <Route path={"/receita/:id"} element={<ReceipCardById />} />
-                <Route path={"/receita"} element={<Receip />} />
-            </Routes>
-            <Footer />
-        </BrowserRouter>
+        <main className='h-screen'>
+            <BrowserRouter>
+                <Header />
+                <Routes>
+                    <Route path={"/"} element={<App />} />
+                    <Route path={"/adicionar"} element={<Adicionar />} />
+                    <Route path={"/receita/:id"} element={<ReceipCardById />} />
+                    <Route path={"/receita"} element={<Receip />} />
+                </Routes>
+                <Footer />
+            </BrowserRouter>
+        </main>
     );
 }
 

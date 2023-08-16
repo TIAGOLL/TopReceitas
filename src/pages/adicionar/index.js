@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 const Adicionar = () => {
 
     const [nome, setNome] = useState('')
@@ -29,32 +30,31 @@ const Adicionar = () => {
 
     const addReceip = async e => {
         e.preventDefault()
-
+        
         const ingredienteSeparado = ingredientes.split(',')
         const modoPreparoSeparado = modoPreparo.split(',')
 
         const id = data.length + 1
-
         const receita = {
             "id": `${id}`,
             "nome": nome,
             "ingredientes": ingredienteSeparado,
             "modopreparo": modoPreparoSeparado,
-            "imagem": imagem
+            "imagem": '/images/'+imagem[0].name
         }
 
         await axios.post(url, receita)
         setAtualizaDados(prev => !prev)
-        setNome('')
-        setImagem('')
-        setIngredientes('')
-        setNewsLetter(false)
-        setModoPreparo('')
+        // setNome('')
+        // setImagem('')
+        // setIngredientes('')
+        // setNewsLetter(false)
+        // setModoPreparo('')
     }
 
     return (
         <>
-            <div className='flex w-full items-center justify-center '>
+            <div className='flex w-full items-center justify-center'>
                 <form ref={formRef} onSubmit={addReceip} className="w-8/12 flex flex-col justify-center my-10">
                     <div className="flex items-center mb-6">
                         <div className="w-2/12">
@@ -87,13 +87,13 @@ const Adicionar = () => {
                         </div>
                     </div>
                     <div className="flex items-center mb-6">
-                        <div className="w-2/12">
+                        <div className='w-2/12'>
                             <label className="block text-gray-700 font-bold text-center mb-1 pr-4" for="imagem">
-                                URL da imagem
+                                Imagem
                             </label>
                         </div>
                         <div className="w-2/3">
-                            <input value={imagem} onChange={e => setImagem(e.target.value)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="imagem" type="text" placeholder="https://imagem.com" />
+                            <input onChange={e => setImagem(e.target.files)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="imagem" type="file" />
                         </div>
                     </div>
 
