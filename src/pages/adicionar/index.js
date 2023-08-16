@@ -45,11 +45,11 @@ const Adicionar = () => {
 
         await axios.post(url, receita)
         setAtualizaDados(prev => !prev)
-        // setNome('')
-        // setImagem('')
-        // setIngredientes('')
-        // setNewsLetter(false)
-        // setModoPreparo('')
+        setNome('')
+        setImagem('')
+        setIngredientes('')
+        setNewsLetter(false)
+        setModoPreparo('')
     }
 
     return (
