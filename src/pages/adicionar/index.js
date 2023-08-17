@@ -16,8 +16,6 @@ const Adicionar = () => {
 
     const formRef = useRef()
 
-    const url = 'https://tiagoll.github.io/apireceita/db.json'
-
     async function carregaDados() {
         await axios.get(url)
             .then((res) => setData(res.data))
@@ -25,22 +23,24 @@ const Adicionar = () => {
 
     useEffect(() => {
         carregaDados()
-    }, [atualizaDados]);
-
+    }, []);
+    
+    const url = 'http://localhost:3000/receitas'
 
     const addReceip = async e => {
         e.preventDefault()
-        
+
         const ingredienteSeparado = ingredientes.split(',')
         const modoPreparoSeparado = modoPreparo.split(',')
 
         const id = data.length + 1
+        console.log(data.length)
         const receita = {
-            "id": `${id}`,
+            "id": `${id + 1}`,
             "nome": nome,
             "ingredientes": ingredienteSeparado,
             "modopreparo": modoPreparoSeparado,
-            "imagem": '/images/'+imagem[0].name
+            "imagem": '/images/' + imagem[0].name
         }
 
         await axios.post(url, receita)
