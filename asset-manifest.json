@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/TopReceitas/static/css/main.ff878295.css",
-    "main.js": "/TopReceitas/static/js/main.145c99f9.js",
-    "index.html": "/TopReceitas/index.html",
-    "main.ff878295.css.map": "/TopReceitas/static/css/main.ff878295.css.map",
-    "main.145c99f9.js.map": "/TopReceitas/static/js/main.145c99f9.js.map"
+    "main.css": "/static/css/main.3e2244fd.css",
+    "main.js": "/static/js/main.0ef75239.js",
+    "index.html": "/index.html",
+    "main.3e2244fd.css.map": "/static/css/main.3e2244fd.css.map",
+    "main.0ef75239.js.map": "/static/js/main.0ef75239.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff878295.css",
-    "static/js/main.145c99f9.js"
+    "static/css/main.3e2244fd.css",
+    "static/js/main.0ef75239.js"
   ]
 }
