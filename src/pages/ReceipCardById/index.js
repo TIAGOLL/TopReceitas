@@ -10,7 +10,7 @@ function ReceipCardById() {
 
 
     const [data, setData] = useState([])
-    const url = 'http://localhost:3000/receitas'
+    const url = 'https://tiagoll.github.io/apireceita/db.json'
 
     async function carregaDados() {
         await axios.get(url)
@@ -28,7 +28,7 @@ function ReceipCardById() {
                 <div className="flex flex-col w-10/12 h-auto bg-blue-200">
                     <div className="flex flex-col items-center justify-center font-semibold text-lg gap-20">
                         {
-                            data.map((item) => {
+                            data.receitas.map((item) => {
                                 if (params.id === item.id) {
                                     return (
                                         <div className="flex w-full h-full flex-col gap-6 items-center justify-center">

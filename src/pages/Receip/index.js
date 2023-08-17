@@ -10,11 +10,11 @@ const Receip = () => {
 
     const [data, setData] = useState([])
 
-    const url = 'http://localhost:3000/receitas'
+    const url = 'https://tiagoll.github.io/apireceita/db.json'
 
     async function carregaDados() {
         await axios.get(url)
-            .then((res) => setData(res.data))
+            .then((res) => setData(res.data.receitas))
     }
 
     useEffect(() => {

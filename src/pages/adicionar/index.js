@@ -16,7 +16,7 @@ const Adicionar = () => {
 
     const formRef = useRef()
 
-    const url = 'http://localhost:3000/receitas'
+    const url = 'https://tiagoll.github.io/apireceita/db.json'
 
     async function carregaDados() {
         await axios.get(url)
