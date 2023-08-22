@@ -135,12 +135,12 @@
       "nome": "arroz",
       "ingredientes": [
         "Arroz",
-        " Oleo",
-        " Cebola"
+        "Oleo",
+        "Cebola"
       ],
       "modopreparo": [
         "1 - corte a cebola",
-        " 2 - frite a cebola cortada com o óleo em uma panela..."
+        "2 - frite a cebola cortada com o óleo em uma panela..."
       ],
       "imagem": "https://www.receitasnestle.com.br/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/7c44045d2e8577819cb76b2b404902dd.webp?itok=KzeGh6J4vtQgNrwXTaW6oR5z+sjlmmXzOPqA9zSS2dvDG/Q/90zXZeXf98VYH/9k="
     }

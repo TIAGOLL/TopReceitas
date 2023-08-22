@@ -9,28 +9,31 @@ const Adicionar = () => {
     const [nome, setNome] = useState('')
     const [ingredientes, setIngredientes] = useState('')
     const [modoPreparo, setModoPreparo] = useState('')
-    const [imagem, setImagem] = useState('')
     const [newsLetter, setNewsLetter] = useState(false)
+    const [imagem, setImagem] = useState('')
     const [data, setData] = useState([])
     const [atualizaDados, setAtualizaDados] = useState(false);
 
     const formRef = useRef()
 
-    const url = 'https://tiagoll.github.io/apireceita/db.json'
+
+    const url = 'http://localhost:3000/receitas'
 
     async function carregaDados() {
         await axios.get(url)
-            .then((res) => setData(res.data))
+            .then((res) => setData(res.data), console.log(data))
     }
 
     useEffect(() => {
         carregaDados()
-    }, [atualizaDados]);
+    }, []);
+
+
 
 
     const addReceip = async e => {
         e.preventDefault()
-        
+
         const ingredienteSeparado = ingredientes.split(',')
         const modoPreparoSeparado = modoPreparo.split(',')
 
@@ -40,7 +43,7 @@ const Adicionar = () => {
             "nome": nome,
             "ingredientes": ingredienteSeparado,
             "modopreparo": modoPreparoSeparado,
-            "imagem": '/images/'+imagem[0].name
+
         }
 
         await axios.post(url, receita)
@@ -58,7 +61,7 @@ const Adicionar = () => {
                 <form ref={formRef} onSubmit={addReceip} className="w-8/12 flex flex-col justify-center my-10">
                     <div className="flex items-center mb-6">
                         <div className="w-2/12">
-                            <label className="block text-gray-700 font-bold text-center mb-1 pr-4" for="inline-full-name">
+                            <label className="block text-gray-700 font-bold text-center mb-1 pr-4" htmlFor="inline-full-name">
                                 Nome da receita
                             </label>
                         </div>
@@ -68,7 +71,7 @@ const Adicionar = () => {
                     </div>
                     <div className="flex items-center mb-6">
                         <div className="w-2/12">
-                            <label className="block text-gray-700 font-bold text-center mb-1 pr-4" for="ingredientes">
+                            <label className="block text-gray-700 font-bold text-center mb-1 pr-4" htmlFor="ingredientes">
                                 Ingredientes
                             </label>
                         </div>
@@ -78,7 +81,7 @@ const Adicionar = () => {
                     </div>
                     <div className="flex items-center mb-6">
                         <div className="w-2/12">
-                            <label className="block text-gray-700 font-bold text-center mb-1 pr-4" for="modopreparo">
+                            <label className="block text-gray-700 font-bold text-center mb-1 pr-4" htmlFor="modopreparo">
                                 Modo de Preparo
                             </label>
                         </div>
@@ -88,12 +91,12 @@ const Adicionar = () => {
                     </div>
                     <div className="flex items-center mb-6">
                         <div className='w-2/12'>
-                            <label className="block text-gray-700 font-bold text-center mb-1 pr-4" for="imagem">
+                            <label className="block text-gray-700 font-bold text-center mb-1 pr-4" htmlFor="imagem">
                                 Imagem
                             </label>
                         </div>
                         <div className="w-2/3">
-                            <input onChange={e => setImagem(e.target.files)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="imagem" type="file" />
+                            <input onChange={(e) => setImagem(e.target.value)} className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500" id="imagem" type="file" />
                         </div>
                     </div>
 

@@ -9,10 +9,10 @@ const Footer = () => {
                     <img width={150} className="rounded-full" src="/images/logo.png" alt="Logo" />
                 </Link>
                 <div className="w-3/12">
-                    <form class="w-full max-w-sm">
-                        <div class="flex items-center border-b border-white py-2">
-                            <input class="appearance-none rounded-lg border-none w-full text-gray-900 bg-white mr-3 py-1 px-2 leading-tight focus:outline-none" type="email" placeholder="exemplo@gmail.com" aria-label="Full name"/>
-                                <button class="flex-shrink-0 bg-green-700 hover:bg-green-600 border-white  text-sm border text-white py-1 px-2 rounded" type="button">
+                    <form className="w-full max-w-sm">
+                        <div className="flex items-center border-b border-white py-2">
+                            <input className="appearance-none rounded-lg border-none w-full text-gray-900 bg-white mr-3 py-1 px-2 leading-tight focus:outline-none" type="email" placeholder="exemplo@gmail.com" aria-label="Full name"/>
+                                <button className="flex-shrink-0 bg-green-700 hover:bg-green-600 border-white  text-sm border text-white py-1 px-2 rounded" type="button">
                                     Receber NewsLetter
                                 </button>
                         </div>
