@@ -34,12 +34,14 @@ const Adicionar = () => {
     const addReceip = async e => {
         e.preventDefault()
 
+
         const ingredienteSeparado = ingredientes.split(',')
         const modoPreparoSeparado = modoPreparo.split(',')
 
         const id = data.length + 1
+        console.log(data.length)
         const receita = {
-            "id": `${id}`,
+            "id": `${id + 1}`,
             "nome": nome,
             "ingredientes": ingredienteSeparado,
             "modopreparo": modoPreparoSeparado,
